@@ -64,7 +64,7 @@ app.post("/createRoom",(req,res)=>{
     let name=req.body.name;
     let mode="host";
     let message="* Room Name already exists *"
-    if( !rooms[room].created){
+    if(rooms[room]!=undefined && !rooms[room].created){
         rooms[room].created=true;
         let roomname="/"+room+"/lobby"+"/?name="+name+"&"+"mode="+mode;
         return res.redirect(roomname);
@@ -229,11 +229,15 @@ io.on('connection',socket=>{
 });
 io.on('connection',socket=>{
     socket.on("user-display",room=>{
+        if(rooms[room]){
         socket.join(room);
         socket.to(room).emit("user_show",rooms[room].players);
+        }
     });
     socket.on("display_name",(name,room)=>{
+        if(rooms[room]){
         socket.to(room).emit("user_name",rooms[room].players);
+        }
     });
    
    socket.on("start",(room,name)=>{
@@ -317,6 +321,7 @@ else{
 
    socket.on("new_host",(per_name,room)=>{
     if(rooms[room]==null){
+        console.log("sockets are working")
         rooms[room]={players:{},limit:1,host:per_name,created:false,num_words:4,time_limit:7,started:false,score:{},running:false,words:[],finished:{}};
        socket.join(room);
        rooms[room].players[socket.id]=per_name;
