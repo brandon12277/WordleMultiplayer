@@ -1,4 +1,4 @@
-const socket=io.connect("localhost:3000/?name="+per_name+"&room="+room+"&mode="+on_start);
+const socket=io.connect("https://lettertrap.onrender.com/?name="+per_name+"&room="+room+"&mode="+on_start);
 
 
 

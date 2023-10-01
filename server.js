@@ -16,7 +16,7 @@ const { isObject } = require("util");
 const text = require("body-parser/lib/types/text");
 const io = new Server(server,{
     cors:{
-    origin:"localhost:3000",
+    origin:"https://lettertrap.onrender.com",
     methods:["GET","POST"]
     }
 })

@@ -1,7 +1,7 @@
 
 
 
-const socket=io.connect("localhost:3000/?name="+per_name+"&room="+room+"&running=true");
+const socket=io.connect("https://lettertrap.onrender.com/?name="+per_name+"&room="+room+"&running=true");
 
 
 
