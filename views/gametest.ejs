@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="game.css">
+
+ 
+</head>
+<body>
+    <div id="nv" class="head_navbar">
+      <img src="logo.png" style="width:200px;height:auto;">
+    </div>
+    <div id="game" class="game_page">
+        <div id="clock">
+            <!-- <img style="width:7%;height:auto;border-radius:50%;" src="clock.png">
+            <p id="timer"></p> -->
+            <div id="timer">
+                 
+            </div>
+        </div>
+        
+        <div class="nav_game_div" id="score">
+           
+        </div>
+            <div class="words_div">
+                <table  id="table" class="word_table">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div id="game_over">
+                    <table class="word_table" style="border-spacing: 15px;">
+                        <tr>
+                            <td  id="disp_ani" style="background-color: green;">G</td>
+                            <td id="disp_ani" style="background-color: green;">A</td>
+                            <td id="disp_ani" style="background-color: green;">M</td>
+                            <td id="disp_ani" style="background-color: green;">E</td>
+                            <td id="disp_ani" style="background-color:  rgb(167, 167, 29); color:black;">O</td>
+                            <td style="background-color:  rgb(167, 167, 29);color:black;">V</td>
+                            <td style="background-color:  rgb(167, 167, 29);color:black;" >E</td>
+                            <td id="disp_ani" style="background-color:  rgb(167, 167, 29);color:black;">R</td>
+                        </tr>
+                        <tr>
+                          
+                        </tr>
+                    </table>
+                    <p id="waiting" style="font-weight: bold;">Loading leaderboard..........<img style="border-radius: 80%;height:auto;width:20px;" src="1495.gif"></p>
+                </div>
+               
+                <div id="scoreboard">
+                  
+                </div>
+            </div>
+        <div id="keys" class="keyboard">
+            <div  class="keys_1" id="key">
+               <button id="Q">Q</button>
+                <button id="W">W</button>
+                <button id="E">E</button>
+                <button id="R" >R</button>
+                <button id="T">T</button>
+                <button id="Y">Y</button>
+                <button id="U">U</button>
+                <button id="I">I</button>
+                <button id="O">O</button>
+                <button id="P">P</button>
+               
+            </div>
+            <div class="keys_2" id="key">
+                <button>A</button>
+                <button>S</button>
+                <button>D</button>
+                <button>F</button>
+                <button>G</button>
+                <button>H</button>
+                <button>J</button>
+                <button>K</button>
+                <button>L</button>
+               
+            </div>
+            <div class="keys_3" id="key">
+                <button>Enter</button>
+                <button>Z</button>
+                <button>X</button>
+                <button>C</button>
+                <button>V</button>
+                <button>B</button>
+                <button>N</button>
+                <button>M</button>
+                <button>Back</button>
+            </div>
+        </div>
+       
+    </div>
+    <div id="after_comp">
+        <div style="display:flex;flex-direction: column;">
+            <h2 style="font-weight: bold;" id="word_reveal"></h2>
+        <h4 id="score_added"></h4>
+        <h4 id="time_taken"></h4>
+        <button id="go_to">Next Word</button>
+    </div>
+    
+    </div>
+    
+</body>
+<script>
+</script>
+
+<script>
+    var time=10;
+    var wordle=["catty","doggy"];
+    let first=0;
+   
+
+    
+</script>
+<script src="game.js"></script>
+<script>
+    window.onload=()=>{
+        waiting();
+    }
+</script>
+</html>
